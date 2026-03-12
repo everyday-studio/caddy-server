@@ -1,0 +1,18 @@
+# Ollm
+ollm.everydaystudio.xyz {
+    handle /api/* {
+        reverse_proxy api:8080
+    }
+    handle {
+        reverse_proxy frontend:5173
+    }
+}
+
+# Everyday-Studio
+everydaystudio.xyz {
+    reverse_proxy team-frontend:4321
+}
+
+www.everydaystudio.xyz {
+	redir https://everydaystudio.xyz{uri}
+}
